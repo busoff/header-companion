@@ -1,7 +1,7 @@
 {
-  "name": "hello",
-  "displayName": "hello",
-  "description": "hello",
+  "name": "header-companion",
+  "displayName": "C/C++ Header Companion",
+  "description": "Open header file by side",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.84.0"
@@ -9,14 +9,13 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:c",
+    "onLanguage:cpp"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
-      {
-        "command": "hello.helloWorld",
-        "title": "Hello World"
-      }
     ]
   },
   "scripts": {
