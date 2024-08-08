@@ -18,7 +18,8 @@ export function activate(context: vscode.ExtensionContext) {
         async (editor: vscode.TextEditor | undefined) => {
             if (editor) {
                 const document = editor.document;
-                if (document.languageId === 'c' || document.languageId === 'cpp') {
+                const is_source_file = !document.fileName.endsWith('.h');
+                if ((document.languageId === 'c' || document.languageId === 'cpp') && is_source_file ) {
                     const fileName = document.fileName;
                     // Check if this file was recently opened
                     console.log("recentlyOpenedFiles: " + recentlyOpenedFiles);
